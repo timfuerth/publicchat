@@ -8,7 +8,7 @@
         function DBConnect_Erstellen(){
             if(!isset($_SESSION['dbLeser'])){
                 $_SESSION['dbLeser'] = new DBConnect();
-                $_SESSION['dbLeser']->VerbindungAufbauen("publicchatdb", "benutzer");
+                $_SESSION['dbLeser']->VerbindungAufbauen("freedb_publicchatdb", "benutzer");
             }
         }
 
@@ -21,4 +21,4 @@
             echo '<input type="'.$type.'" id="'.$name.'" name="'.$name.'">';
         }
 
-?>
+}
