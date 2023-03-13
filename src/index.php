@@ -10,8 +10,8 @@
     include "control/ausgabefunktionen.php";
 
     //View:
-    include_once "view/header.php";
     session_start();
+    include_once "view/header.php";
     include "view/chatTemplate.php";
 
 
