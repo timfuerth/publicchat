@@ -62,3 +62,8 @@ header a {
     border-radius: 4px;
 }
 
+#splatel {
+    width: 30%;
+    scrollbar-color: rgba(var(--white-rgb),.16)transparent;
+
+}
