@@ -30,12 +30,12 @@ h1 {
 
 
 /* ---------------------- BOXEN ----------------------- */
-.wrapper{
+#wrapper{
     width: 100%;
     max-width: 1250px;
     min-height: 1000px;
-    padding: 0px 5px;
-    margin: 160px auto 0px auto;
+    padding: 0px 0px;
+    margin: 140px auto 0px auto;
 }
 
 header {
@@ -62,8 +62,15 @@ header a {
     border-radius: 4px;
 }
 
-#splatel {
+#spaltel {
     width: 30%;
     scrollbar-color: rgba(var(--white-rgb),.16)transparent;
-
+    background-color: hotpink;
+    float: left;
+    height: 100%;
+}
+#spalter {
+    width: 70%;
+    background-color: maroon;
+    height: 100%;
 }
