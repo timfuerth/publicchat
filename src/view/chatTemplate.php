@@ -8,7 +8,7 @@
                 
             </div>
             <div id="spalter">
-
+          
             </div>
         </section>
     </div>
