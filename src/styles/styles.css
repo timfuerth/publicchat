@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ------------ ZENTRALES STYLESHEET -------------- */
+/*                 Fürth Tim                        */
+/* ------------------------------------------------ */
+/* ------------ Allgemeine Formatierung ----------- */
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ------------ SCHRIFTEN ------------------- */
+
+h1 {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+
+
+
+/* ---------------------- BOXEN ----------------------- */
+.wrapper{
+    width: 100%;
+    max-width: 1250px;
+    min-height: 1000px;
+    padding: 0px 5px;
+    margin: 160px auto 0px auto;
+}
+
+header {
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    top: 0px;
+}
+header img {
+    float: left;
+    height: 70px;
+}
+header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
