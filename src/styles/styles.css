@@ -73,4 +73,9 @@ header a {
     width: 70%;
     background-color: maroon;
     height: 100%;
+    visibility: hidden;
+}
+.contact {
+    background-color: aqua;
+    cursor: pointer;
 }

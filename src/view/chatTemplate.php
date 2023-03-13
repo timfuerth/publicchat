@@ -4,10 +4,14 @@
         <section>
             <div id="spaltel">
                 
-                <?php $_SESSION['controller']->Ueberschrift(1, "Gästebucheintrag erstellen und absenden") ?>
+                <?php $_SESSION['controller']->contactErstellen("global")?>
                 
             </div>
             <div id="spalter">
+                <form method="post">
+                    <input type="text" name="msgbox" placeholder="..." />
+
+                </form>
 
             </div>
         </section>

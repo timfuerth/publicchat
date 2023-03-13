@@ -1,16 +1,16 @@
 <?php
-    
+
     //Datenbankverbindung:
     include "model/dbConnect.php";
     //Klassen:
     //include "library/gast.php";
     //include "library/gaestebuch.php";
     //Controller:
-    include "control/controller.php";
     include "control/ausgabefunktionen.php";
+    include "control/controller.php";
 
-    //View:
     session_start();
+    //View:
     include_once "view/header.php";
     include "view/chatTemplate.php";
 
@@ -22,4 +22,8 @@
     }
 
     $_SESSION['controller']->DBConnect_Erstellen();
+
+    $_SESSION['user'] = "BURGI";
+    $_SESSION['touser'] = "";
+
 ?>
