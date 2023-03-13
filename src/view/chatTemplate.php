@@ -9,7 +9,7 @@
             </div>
             <div id="spalter">
                 <form method="post">
-                    <input type="text" name="msgbox" placeholder="..." />
+                    <input type="text" name="msgbox" id="msgbox" placeholder="..." />
 
                 </form>
 

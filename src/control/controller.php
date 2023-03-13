@@ -1,10 +1,10 @@
 <script>
     function contactClick() {
+        var contact;
         document.getElementById("spalter").style.visibility = "visible";
-        <?php
-            $_SESSION['touser'] = $_GET["contact"];
-            
-        ?>
+        contact = document.getElementById("contact").getAttribute('value');
+        alert(contact);
+
     }
 </script>
 <?php
@@ -30,9 +30,9 @@
         }
 
         function contactErstellen($name){
-            echo "<div class='contact' onclick='contactClick()'>";
+            echo '<div id="contact" value="'.$name.'" onclick="contactClick()">';
             $this->Ueberschrift(2,$name);
-            echo "</div>";
+            echo '</div>';
 
         }
         function msgSenden($msg){
