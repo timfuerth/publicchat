@@ -3,9 +3,9 @@
     <div id="wrapper">
         <section>
             <div id="spaltel">
-                <?php
-                $_SESSION['controller']->
-                ?>
+                
+                <?php $_SESSION['controller']->Ueberschrift(1, "Gästebucheintrag erstellen und absenden") ?>
+                
             </div>
             <div id="spalter">
 
