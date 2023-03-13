@@ -1,19 +1,11 @@
 <?php
-
-    //Datenbankverbindung:
+    session_start();
     include "model/dbConnect.php";
-    //Klassen:
-    //include "library/gast.php";
-    //include "library/gaestebuch.php";
-    //Controller:
+    include "library/benutzer.php";
+    include "library/chatnachricht.php";
     include "control/ausgabefunktionen.php";
     include "control/controller.php";
-
-    session_start();
-    //View:
-    include_once "view/header.php";
-    include "view/chatTemplate.php";
-
+    
 
 
 
@@ -25,5 +17,8 @@
 
     $_SESSION['user'] = "BURGI";
     $_SESSION['touser'] = "";
+
+    include_once "view/header.php";
+    include "view/chatTemplate.php";
 
 ?>

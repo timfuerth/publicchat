@@ -2,7 +2,7 @@
     function contactClick() {
         document.getElementById("spalter").style.visibility = "visible";
         <?php
-            //$_SESSION['touser'] = $_GET["contact"];
+            $_SESSION['touser'] = $_GET["contact"];
             
         ?>
     }

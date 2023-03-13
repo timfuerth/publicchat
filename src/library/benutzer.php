@@ -2,7 +2,7 @@
     class Benutzer
     {
 
-        static neueID;
+        static $neueID;
         public $BenutzerID;
         public $Vorname;
         public $Nachname;
@@ -17,6 +17,7 @@
             $this->Nachname = $Nachname;
             $this->Username = $Username;
             $this->Passwort = $Passwort;
+        }
         
         
     }
