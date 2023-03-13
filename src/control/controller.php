@@ -1,6 +1,14 @@
+<script>
+    function contactClick() {
+        document.getElementById("spalter").style.visibility = "visible";
+        <?php
+            //$_SESSION['touser'] = $_GET["contact"];
+            
+        ?>
+    }
+</script>
 <?php
     class Controller{
-
         function __construct(){
 
         }
@@ -21,4 +29,16 @@
             echo '<input type="'.$type.'" id="'.$name.'" name="'.$name.'">';
         }
 
+        function contactErstellen($name){
+            echo "<div class='contact' onclick='contactClick()'>";
+            $this->Ueberschrift(2,$name);
+            echo "</div>";
+
+        }
+        function msgSenden($msg){
+            if (isset($_POST["msgbox"])){
+                $msg = $_POST["msgbox"];
+                $_SESSION['dbLeser']->NachrichtSenden("freedb_publicchatdb", "nachrichten", $_SESSION['user'], $_SESSION['touser'],$msg);
+            }
+        }
 }
