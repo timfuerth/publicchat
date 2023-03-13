@@ -3,7 +3,7 @@
     <div id="wrapper">
         <section>
             <div id="spaltel">
-
+                
             </div>
             <div id="spalter">
 
