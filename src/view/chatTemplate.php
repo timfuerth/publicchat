@@ -3,7 +3,9 @@
     <div id="wrapper">
         <section>
             <div id="spaltel">
-                
+                <?php
+                $_SESSION['controller']->
+                ?>
             </div>
             <div id="spalter">
 
