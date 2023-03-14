@@ -7,10 +7,15 @@
 
     }
 </script>
+
 <?php
     class Controller{
         function __construct(){
 
+        }
+
+        function Alert($nachricht){
+            echo "<script type='text/javascript'>alert('".$nachricht."');</script>";
         }
 
         function DBConnect_Erstellen(){
@@ -18,6 +23,7 @@
                 $_SESSION['dbLeser'] = new DBConnect();
                 $_SESSION['dbLeser']->VerbindungAufbauen("freedb_publicchatdb", "benutzer");
             }
+            
         }
 
         function Ueberschrift($rang, $ueberschrift){
@@ -29,8 +35,25 @@
             echo '<input type="'.$type.'" id="'.$name.'" name="'.$name.'">';
         }
 
-        function contactErstellen($name){
-            echo '<div id="contact" value="'.$name.'" onclick="contactClick()">';
+        function kontakteBestimmen()
+        {
+            
+            // for ($i=1; $i < Count($_SESSION['alleBenutzer']); $i++) { 
+            //     if($_SESSION['alleBenutzer'][$i]->Vorname == $_SESSION['user'])
+            //     {
+                    
+            //     }
+            //     else{
+            //         $_SESSION['kontakte'] = $_SESSION['alleBenutzer'];
+            //     }
+            //     $this->Alert($_SESSION['kontakte']->Vorname);
+            // }
+            
+        }
+
+        function kontakteErstellen(){
+            
+            echo '<div id="contact" class="contact" value="'.$name.'" onclick="contactClick()">';
             $this->Ueberschrift(2,$name);
             echo '</div>';
 
