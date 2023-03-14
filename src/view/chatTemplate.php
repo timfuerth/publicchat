@@ -4,7 +4,6 @@
         <section>
             <div id="spaltel">
                 
-                <?php $_SESSION['controller']->contactErstellen("global")?>
                 
             </div>
             <div id="spalter">
