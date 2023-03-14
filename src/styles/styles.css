@@ -30,11 +30,15 @@ h1 {
 /* ---------------------- BOXEN ----------------------- */
 body{
     padding: 0;
+    background-color: lightgreen;
 }
 
 header {
+    margin: 20px auto 0px auto;
     width: 100%;
+    max-width: 1400px;
     height: 60px;
+    padding: 0px 0px;
     
     overflow: hidden;
     background-color: #f1f1f1;
@@ -49,7 +53,7 @@ header {
 }
 #headerr{
     width: 100%;
-    background-color: #684969;
+    background-color: grey;
     padding: 10px 10px;
     height: 100%;
 }
@@ -68,8 +72,9 @@ header a {
 }
 
 #wrapper{
+    margin: 0px auto;
     width: 100%;
-    max-width: 1250px;
+    max-width: 1400px;
     height: 85%;
     padding: 0px 0px;
 }
@@ -81,12 +86,38 @@ header a {
     height: 100%;
 }
 #spalter {
-    width: 70%;
+    width: 100%;
     background-color: maroon;
     height: 100%;
     visibility: hidden;
 }
+
+#spalter section{
+    height: 93%;
+    background-color:lightcyan;
+}
+
+.NachrichtSenden input[type="text"]{
+    width: 70%;
+    padding: 15px;
+    font-size: 1em;
+    height: 7%;
+    
+}
+
 .contact {
+    
     background-color: aqua;
     cursor: pointer;
+    border-bottom-color: grey;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding: 12px;
+    height: 50px;
+    
+
+}
+
+.contact:hover{
+    background-color: aquamarine;
 }

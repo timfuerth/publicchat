@@ -20,7 +20,8 @@
 		<h1>PublicChat</h1>
 		</div>
 		<div id="headerr">
-			<p>Test</p>
+		<?php $_SESSION['controller']->Ueberschrift(1, "seas") ?>
+			
 		</div>
 			
 	</header>
