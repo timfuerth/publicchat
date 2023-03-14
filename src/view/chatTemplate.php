@@ -4,6 +4,7 @@
         <section>
             <div id="spaltel">
                 
+            <?php $_SESSION['controller']->kontakteErstellen() ?>
                 
             </div>
             <div id="spalter">

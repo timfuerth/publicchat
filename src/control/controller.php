@@ -1,8 +1,8 @@
 <script>
-    function contactClick() {
-        var contact;
+    function contactClick(kontaktID) {
+        var contact = "";
         document.getElementById("spalter").style.visibility = "visible";
-        contact = document.getElementById("contact").getAttribute('value');
+        contact = document.getElementById("contactSelect"+kontaktID).getAttribute('value');
         alert(contact);
 
     }
@@ -38,24 +38,29 @@
         function kontakteBestimmen()
         {
             
-            // for ($i=1; $i < Count($_SESSION['alleBenutzer']); $i++) { 
-            //     if($_SESSION['alleBenutzer'][$i]->Vorname == $_SESSION['user'])
-            //     {
+            $kontaktanzahl=0;
+            for ($i=0; $i < Count($_SESSION['alleBenutzer']); $i++)
+            { 
+                if($_SESSION['alleBenutzer'][$i]->Vorname != $_SESSION['user'])
+                {
+                    $_SESSION['kontakte'][$kontaktanzahl] = $_SESSION['alleBenutzer'][$i];
                     
-            //     }
-            //     else{
-            //         $_SESSION['kontakte'] = $_SESSION['alleBenutzer'];
-            //     }
-            //     $this->Alert($_SESSION['kontakte']->Vorname);
-            // }
+                    $kontaktanzahl++;
+                }
+                
+            }
             
         }
 
-        function kontakteErstellen(){
+        function kontakteErstellen()
+        {
+            for ($i=0; $i < Count($_SESSION['kontakte']); $i++)
+            { 
+                echo '<div id="contactSelect'.$i.'" class="contact" value="'.$_SESSION['kontakte'][$i]->Username.'" onclick="contactClick('.$i.')">';
+                $this->Ueberschrift(2,$_SESSION['kontakte'][$i]->Username);
+                echo '</div>';
+            }
             
-            echo '<div id="contact" class="contact" value="'.$name.'" onclick="contactClick()">';
-            $this->Ueberschrift(2,$name);
-            echo '</div>';
 
         }
         function msgSenden($msg){

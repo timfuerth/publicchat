@@ -12,9 +12,10 @@
     }
     
     $_SESSION['controller']->DBConnect_Erstellen();
-    $_SESSION['controller']->kontakteBestimmen();
-    $_SESSION['user'] = "Dominik";
+    $_SESSION['user'] = "Thomas";
     $_SESSION['touser'] = "";
+    $_SESSION['controller']->kontakteBestimmen();
+    
 
     include_once "view/header.php";
     if (!isset($_SESSION['user'])){

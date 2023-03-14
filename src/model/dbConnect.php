@@ -8,13 +8,13 @@
         function VerbindungAufbauen($datenbank, $tabellenname){
             
             $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
-            
+            $i = 0;
             $sql = "select * from $tabellenname";
 		    foreach($pdo->query($sql) as $zeile){
-            $i = $zeile["BID"];
-            $benutzer = new Benutzer($zeile["Vorname"], $zeile["Nachname"], $zeile["Username"], $zeile["Passwort"]);
-            $_SESSION['alleBenutzer'][$i] = $benutzer;
-            $_SESSION['controller']->Alert($_SESSION['alleBenutzer'][$i]->Vorname);
+                $benutzer = new Benutzer($zeile["Vorname"], $zeile["Nachname"], $zeile["Username"], $zeile["Passwort"]);
+                $_SESSION['alleBenutzer'][$i] = $benutzer;
+                $_SESSION['controller']->Alert($_SESSION['alleBenutzer'][$i]->Vorname);
+                $i++;
 		    }
             
             $pdo = null;
