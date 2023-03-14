@@ -7,7 +7,7 @@
 }
 
 /* ------------ ZENTRALES STYLESHEET -------------- */
-/*                 Fürth Tim                        */
+/*                 Fï¿½rth Tim                        */
 /* ------------------------------------------------ */
 /* ------------ Allgemeine Formatierung ----------- */
 
@@ -22,7 +22,7 @@
 /* ------------ SCHRIFTEN ------------------- */
 
 h1 {
-    font-size: 4em;
+    font-size: 2em;
     font-weight: 600;
 }
 
@@ -40,26 +40,24 @@ h1 {
 
 header {
     width: 100%;
-    height: 120px;
-    position: fixed;
+    height: 60px;
+    
     overflow: hidden;
     background-color: #f1f1f1;
-    padding: 20px 10px;
-    top: 0px;
+    padding: 10px 10px;
 }
-header img {
+.logo {
     float: left;
-    height: 70px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    border-width: 0;
 }
 header a {
     float: left;
     color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
+    margin-right: 50px;
 }
 
 #spaltel {
