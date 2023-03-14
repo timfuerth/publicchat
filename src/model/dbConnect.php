@@ -36,5 +36,18 @@
             $pdo = null;
             return $allowed;
         }
+        function RegisterRequest($datenbank, $tabellenname, $vorname, $nachname, $user, $pw){
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
+            if (strlen($pw) > 5){
+                return false;
+            }
+            $statement = $pdo->prepare("Insert into ".$tabellenname."(Vorname, Nachname, Username, Passwort) values(?, ?, ?, ?)");
+            $statement->execute(array($vorname, $nachname, $user, $pw));
+            $pdo = null;
+            return true;
+        }
+
+
+
     }
 ?>

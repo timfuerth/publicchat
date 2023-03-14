@@ -78,4 +78,14 @@
                 $this->Alert("Passwort oder Benutzername falsch!");
             }
         }
+
+        function register($vorname, $nachname, $user, $pw){
+            if ($_SESSION['dbLeser']->RegisterRequest("freedb_publicchatdb", "benutzer", $vorname, $nachname, $user, $pw)){
+                $_SESSION['user'] = $user;
+                header("Refresh:0");
+            }
+            else {
+                $this->Alert("Registrierung fehlgeschlagen!");
+            }
+        }
 }

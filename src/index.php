@@ -3,6 +3,7 @@
     include "library/benutzer.php";
     include "library/chatnachricht.php";
     include "control/controller.php";
+
     
     session_start();
     
