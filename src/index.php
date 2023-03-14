@@ -20,10 +20,10 @@
         require "view/login.php";
     }
     else{
-        include "view/chatTemplate.php";
-        
         $_SESSION['touser'] = "";
         $_SESSION['controller']->kontakteBestimmen();
+        include "view/chatTemplate.php";
+       
     }
     $_SESSION['touser'] = "";
 

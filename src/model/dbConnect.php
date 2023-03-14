@@ -13,7 +13,7 @@
 		    foreach($pdo->query($sql) as $zeile){
                 $benutzer = new Benutzer($zeile["Vorname"], $zeile["Nachname"], $zeile["Username"], $zeile["Passwort"]);
                 $_SESSION['alleBenutzer'][$i] = $benutzer;
-                $_SESSION['controller']->Alert($_SESSION['alleBenutzer'][$i]->Vorname);
+                
                 $i++;
 		    }
             
