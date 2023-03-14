@@ -13,7 +13,7 @@
         $_SESSION['controller'] = new Controller();
     }
     $_SESSION['controller']->DBConnect_Erstellen();
-
+    $_SESSION['user'] = "test";
     include_once "view/header.php";
     if (!isset($_SESSION['user'])){
         require "view/login.php";
