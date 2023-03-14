@@ -5,7 +5,6 @@
     include "control/controller.php";
     
     session_start();
-
     
     if(!isset($_SESSION['controller'])){
         $_SESSION['controller'] = new Controller();
@@ -25,8 +24,5 @@
         include "view/chatTemplate.php";
     }
     $_SESSION['touser'] = "";
-
-    
-    
 
 ?>

@@ -27,17 +27,9 @@ h1 {
 }
 
 
-
-
 /* ---------------------- BOXEN ----------------------- */
 body{
     padding: 0;
-}
-#wrapper{
-    width: 100%;
-    max-width: 1250px;
-    min-height: 1000px;
-    padding: 0px 0px;
 }
 
 header {
@@ -46,7 +38,20 @@ header {
     
     overflow: hidden;
     background-color: #f1f1f1;
+    
+}
+#headerl{
+    width: 30%;
+    float: left;
+    background-color: #684969;
     padding: 10px 10px;
+    height: 100%;
+}
+#headerr{
+    width: 100%;
+    background-color: #684969;
+    padding: 10px 10px;
+    height: 100%;
 }
 .logo {
     float: left;
@@ -62,6 +67,12 @@ header a {
     margin-right: 50px;
 }
 
+#wrapper{
+    width: 100%;
+    max-width: 1250px;
+    height: 85%;
+    padding: 0px 0px;
+}
 #spaltel {
     width: 30%;
     scrollbar-color: rgba(var(--white-rgb),.16)transparent;
