@@ -8,17 +8,22 @@
     
     session_start();
 
-
+    
     if(!isset($_SESSION['controller'])){
         $_SESSION['controller'] = new Controller();
     }
-
     $_SESSION['controller']->DBConnect_Erstellen();
 
-    $_SESSION['user'] = "BURGI";
+    include_once "view/header.php";
+    if (!isset($_SESSION['user'])){
+        require "view/login.php";
+    }
+    else{
+        include "view/chatTemplate.php";
+    }
     $_SESSION['touser'] = "";
 
-    include_once "view/header.php";
-    include "view/chatTemplate.php";
+    
+    
 
 ?>
