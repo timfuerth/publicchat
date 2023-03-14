@@ -8,8 +8,13 @@
                 
             </div>
             <div id="spalter">
-                <form method="post">
-                    <input type="text" name="msgbox" id="msgbox" placeholder="..." />
+                <section>
+
+
+
+                </section>
+                <form method="post" class="NachrichtSenden">
+                    <input type="text" name="msgbox" id="msgbox" placeholder="Schreib eine Nachricht" />
 
                 </form>
 
