@@ -11,9 +11,7 @@
     }
     
     $_SESSION['controller']->DBConnect_Erstellen();
-    $_SESSION['user'] = "Thomas";
-    $_SESSION['touser'] = "";
-    $_SESSION['controller']->kontakteBestimmen();
+    
     
 
     include_once "view/header.php";
@@ -22,6 +20,9 @@
     }
     else{
         include "view/chatTemplate.php";
+        
+        $_SESSION['touser'] = "";
+        $_SESSION['controller']->kontakteBestimmen();
     }
     $_SESSION['touser'] = "";
 

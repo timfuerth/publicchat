@@ -60,13 +60,22 @@
                 $this->Ueberschrift(2,$_SESSION['kontakte'][$i]->Username);
                 echo '</div>';
             }
-            
 
         }
         function msgSenden($msg){
             if (isset($_POST["msgbox"])){
                 $msg = $_POST["msgbox"];
                 $_SESSION['dbLeser']->NachrichtSenden("freedb_publicchatdb", "nachrichten", $_SESSION['user'], $_SESSION['touser'],$msg);
+            }
+        }
+
+        function login($user, $pw){
+            if ($_SESSION['dbLeser']->LoginRequest("freedb_publicchatdb", "benutzer", $user, $pw)){
+                $_SESSION['user'] = $user;
+                header("Refresh:0");
+            }
+            else {
+                $this->Alert("Passwort oder Benutzername falsch!");
             }
         }
 }
