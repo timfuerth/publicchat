@@ -35,8 +35,7 @@
 	?>
 		</div>
 		<div id="headerr">
-		<?php $_SESSION['controller']->Ueberschrift(1, "seas") ?>
-			
+			<h1 id="h1ToUser"></h1>
 		</div>
 			
 	</header>
