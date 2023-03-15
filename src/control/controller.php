@@ -12,7 +12,6 @@
             console.log('Ready state:', this.readyState);
             if (this.readyState == 4 && this.status == 200) {
             console.log('Response:', this.responseText);
-            alert(this.responseText);
             }
         };
         xhttp.open("POST", "control/save_contact.php", true);
@@ -78,7 +77,7 @@
         }
         function msgSenden($msg){
             if (isset($_POST["msgbox"])){
-                $nachricht = new Chatnachricht($_SESSION["user"], "Test1", $msg);
+                $nachricht = new Chatnachricht($_SESSION["user"], $_SESSION["toUser"], $msg);
                 $_SESSION['dbLeser']->NachrichtSenden("freedb_publicchatdb", "nachrichten", $nachricht);
                 $this->Alert($nachricht->Nachricht);
             }
