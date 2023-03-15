@@ -1,7 +1,15 @@
 <!DOCTYPE html> 
 <html lang="de-at">
 <head>
-	<title>PublicChat</title>
+	<?php 
+	if (isset($_SESSION['user'])){
+		echo '<title>PublicChat - '.$_SESSION['user'].'</title>';
+	}
+	else{
+		echo '<title>PublicChat</title>';
+	}
+	?>
+	
 	<link rel="stylesheet" href="styles/styles.css">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 	<meta lang="de-at"/>
@@ -17,7 +25,14 @@
 	<header>
 		<div id="headerl">
 		<a href="index.php"><img src="" class="logo" alt=""></a>
-		<h1>PublicChat</h1>
+		<?php 
+		if (isset($_SESSION['user'])){
+			echo '<h1>PublicChat - '.$_SESSION['user'].'</h1>';
+		}
+		else{
+			echo '<h1>PublicChat</h1>';
+		}
+	?>
 		</div>
 		<div id="headerr">
 		<?php $_SESSION['controller']->Ueberschrift(1, "seas") ?>
