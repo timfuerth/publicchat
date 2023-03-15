@@ -30,7 +30,7 @@ include_once "header.php";
                 $_SESSION['controller']->register($_POST["vorname"], $_POST["nachname"],$_POST["username"], $_POST["pw"]);
             }
             ?>
-            <a href="view/index.php">Zurück zum Login</a>
+            <a href="../index.php">Zurück zum Login</a>
         </section>
     </div>
 </body>
