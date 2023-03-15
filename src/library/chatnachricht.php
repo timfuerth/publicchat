@@ -8,14 +8,13 @@
         public $Nachricht;   
         
 
-        function __construct()
+        function __construct($vonBenutzer, $anBenutzer, $nachricht)
         {
             self::$neueID++;
             $this->NachrichtID = self::$neueID;
             $this->vonBenutzer = $vonBenutzer;
             $this->anBenutzer = $anBenutzer;
-            $this->nachricht = $nachricht;
-
+            $this->Nachricht = $nachricht;
         }
 
         

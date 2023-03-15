@@ -20,10 +20,10 @@
             $pdo = null;
 
         }
-        function NachrichtSenden($datenbank, $tabellenname, $vonBenutzer, $anBenutzer, $msg){
+        function NachrichtSenden($datenbank, $tabellenname, $chatnachricht){
             $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
             $statement = $pdo->prepare("Insert into ".$tabellenname."(vonBenutzer, anBenutzer, Nachricht) values(?, ?, ?)");
-            $statement->execute(array($vonBenutzer, $anBenutzer,$msg));
+            $statement->execute(array($chatnachricht->vonBenutzer, $chatnachricht->anBenutzer,$chatnachricht->Nachricht));
             $pdo = null;
         }
 

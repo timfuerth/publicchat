@@ -1,17 +1,14 @@
+
 <script>
     function contactClick(kontaktID) {
         var contact = "";
         
-        contact = document.getElementById("contactSelect"+kontaktID).getAttribute('value');       
+        contact = document.getElementById("contactSelect"+kontaktID).getAttribute("value");  
         document.getElementById("spalter").style.visibility = "visible";
-        
+        document.getElementById("h1ToUser").innerHTML = contact;
     }
     
 </script>
-<?php
-        
-?>
-
 <?php
     
     class Controller{
@@ -69,8 +66,9 @@
         }
         function msgSenden($msg){
             if (isset($_POST["msgbox"])){
-                $msg = $_POST["msgbox"];
-                $_SESSION['dbLeser']->NachrichtSenden("freedb_publicchatdb", "nachrichten", $_SESSION['user'], $_SESSION['touser'],$msg);
+                $nachricht = new Chatnachricht($_SESSION["user"], "Test1", $msg);
+                $_SESSION['dbLeser']->NachrichtSenden("freedb_publicchatdb", "nachrichten", $nachricht);
+                $this->Alert($nachricht->Nachricht);
             }
         }
 
