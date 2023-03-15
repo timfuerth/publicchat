@@ -1,21 +1,26 @@
 <script>
     function contactClick(kontaktID) {
         var contact = "";
+        
+        contact = document.getElementById("contactSelect"+kontaktID).getAttribute('value');       
         document.getElementById("spalter").style.visibility = "visible";
-        contact = document.getElementById("contactSelect"+kontaktID).getAttribute('value');
-        alert(contact);
-
+        
     }
+    
 </script>
+<?php
+        
+?>
 
 <?php
+    
     class Controller{
         function __construct(){
 
         }
 
         function Alert($nachricht){
-            echo "<script type='text/javascript'>alert('".$nachricht."');</script>";
+            echo "<script type='text/javascript'>alert('".$nachricht."');</script>";            
         }
 
         function DBConnect_Erstellen(){
