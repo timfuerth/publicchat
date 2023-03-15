@@ -6,6 +6,18 @@
         contact = document.getElementById("contactSelect"+kontaktID).getAttribute("value");  
         document.getElementById("spalter").style.visibility = "visible";
         document.getElementById("h1ToUser").innerHTML = contact;
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            console.log('Ready state:', this.readyState);
+            if (this.readyState == 4 && this.status == 200) {
+            console.log('Response:', this.responseText);
+            alert(this.responseText);
+            }
+        };
+        xhttp.open("POST", "control/save_contact.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("contact=" + contact);
     }
     
 </script>

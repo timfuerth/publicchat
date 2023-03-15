@@ -10,7 +10,9 @@
     if(!isset($_SESSION['controller'])){
         $_SESSION['controller'] = new Controller();
     }
-    
+    if (isset($_SESSION['toUser'])){
+        $_SESSION['controller']->Alert($_SESSION['toUser']);
+    }
     $_SESSION['controller']->DBConnect_Erstellen();
     
     
