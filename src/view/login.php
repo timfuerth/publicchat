@@ -15,7 +15,7 @@ include_once "headerLogin.php";
 <head>
     <link rel="stylesheet" href="../styles/styles.css">
     </head>
-<body>
+<body style="background-image: url('images/background.png');">
 
     <div id="wrapper">
         <div class="ButtonLogin">

@@ -30,7 +30,13 @@ h1 {
 /* ---------------------- BOXEN ----------------------- */
 body{
     padding: 0;
-    background-color: lightgreen;
+    background-image: url('view/images/background.png');
+    
+}
+
+h1{
+    font-size: 1.5em;
+    padding: 15px 25px;
 }
 
 header {
@@ -46,19 +52,24 @@ header {
 #headerl{
     width: 30%;
     float: left;
-    background-color: #684969;
-    padding: 10px 25px;
+    background-color: #f0f2f5;
     height: 100%;
+    border-right-color: lightgray;
+    border-right-width: 0.5px;
+    border-right-style: solid;
 }
 
 #headerLogin{
     width: 50%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    background-color: #684969;
-    padding: 10px 25px;
+    background-color: #f0f2f5;
     height: 100%;
     margin: 0px auto;
+}
+
+#headerLogin h1{
+    padding-left: 0px;
 }
 
 #headerLogin button{
@@ -76,8 +87,8 @@ header {
 
 #headerr{
     width: 100%;
-    background-color: grey;
-    padding: 10px 25px;
+    background-color: f0f2f5;
+    
     height: 100%;
 }
 #headerr h1{
@@ -96,6 +107,8 @@ header {
     float: left;
     height: 40px;
     width: 40px;
+    margin: 10px;
+    margin-left: 25px;
     border-radius: 50%;
     background-color: #000;
     border-width: 0;
@@ -103,7 +116,7 @@ header {
 header a {
     float: left;
     color: black;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 #wrapper{
@@ -116,11 +129,16 @@ header a {
 #spaltel {
     width: 30%;
     scrollbar-color: rgba(var(--white-rgb),.16)transparent;
-    background-color: hotpink;
+    background-color: f0f2f5;
     overflow: auto;
     float: left;
     height: 100%;
 }
+
+#spaltel .contact{
+    padding-left: 25px;
+}
+
 #spalter {
     width: 100%;
     background-color: maroon;
@@ -130,7 +148,7 @@ header a {
 
 #spalter #Chatverlauf{
     height: 93%;
-    background-color:lightcyan;
+    background-image: url('view/images/whatsapp.jpg');
     overflow: auto;
     padding: 25px;
 }
@@ -149,17 +167,17 @@ header a {
 }
 
 .contact {
-    background-color: aqua;
+    background-color: #fff;
     cursor: pointer;
-    border-bottom-color: grey;
-    border-bottom-width: 1px;
+    border-bottom-color: lightgray;
+    border-bottom-width: 0.5px;
     border-bottom-style: solid;
     padding: 12px;
     height: 50px;
 }
 
 .contact:hover{
-    background-color: aquamarine;
+    background-color: #f0f2f5;
 }
 
 .LoginForm {   
@@ -178,18 +196,20 @@ header a {
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
-    border: 2px solid green;   
+    border: 2px solid #f0f2f5;   
     box-sizing: border-box; 
 }
 
 .LoginForm button[type=submit]{
-    background-color: #4CAF50;   
+    background-color: #1c98f7;   
     width: 100%;  
-    color: orange;   
+    color: black;
+    font-size: 1.7em;   
     padding: 15px;   
     margin: 10px 0px;   
     border: none;   
     cursor: pointer;
+    
 }
 
 .LoginForm button[type=submit]:hover{
@@ -197,7 +217,7 @@ header a {
 }
 
 .ButtonLogin{
-    background-color: #4CAF50;
+    
     font-size: 1em;
     margin: 0px auto;
     width: 50%;
@@ -213,4 +233,8 @@ header a {
     cursor: pointer;
     display: block;
     background-color: grey;
+}
+
+.ButtonLogin a:hover{
+    opacity: 0.7;
 }
