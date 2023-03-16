@@ -1,13 +1,13 @@
 <?php
     class DBConnect{
-        
+        public $DBPWD = "5PJt8Ay!&KHv?DX";
         function __construct(){
 
         }
 
         function VerbindungAufbauen($datenbank, $tabellenname){
             
-            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', $this->DBPWD);
             $i = 0;
             $sql = "select * from ".$tabellenname;
 		    foreach($pdo->query($sql) as $zeile){
@@ -21,13 +21,13 @@
 
         }
         function NachrichtSenden($datenbank, $tabellenname, $chatnachricht){
-            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', $this->DBPWD);
             $statement = $pdo->prepare("Insert into ".$tabellenname."(vonBenutzer, anBenutzer, Nachricht) values(?, ?, ?)");
             $statement->execute(array($chatnachricht->vonBenutzer, $chatnachricht->anBenutzer,$chatnachricht->Nachricht));
             $pdo = null;
         }
         function NachrichtenLesen($datenbank, $tabellenname, $user, $touser){
-            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', $this->DBPWD);
 
             $sql = "select * from ".$tabellenname;
 		    foreach($pdo->query($sql) as $zeile){
@@ -41,7 +41,7 @@
             return false;
         }
         function LoginRequest($datenbank, $tabellenname, $user, $pw){
-            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', $this->DBPWD);
             $allowed = false;
             foreach($pdo->query("select Username, Passwort from ".$tabellenname." where Username = '".$user."' AND Passwort = '".$pw."'") as $zeile){
                 $allowed = true;
@@ -50,7 +50,7 @@
             return $allowed;
         }
         function RegisterRequest($datenbank, $tabellenname, $vorname, $nachname, $user, $pw){
-            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', $this->DBPWD);
             $errors = array();
 
 		    foreach($pdo->query("select Username from ".$tabellenname) as $zeile){

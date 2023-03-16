@@ -20,7 +20,7 @@
 <body>
 	<header>
 		<div id="headerLogin">
-		<a href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
+		<a href=""><img src="images/logo.png" class="logo" alt=""></a>
 		<?php 
 		
 			echo '<h1>PublicChat</h1>';

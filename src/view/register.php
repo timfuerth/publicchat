@@ -31,7 +31,7 @@ include_once "headerLogin.php";
                     $_SESSION['controller']->register($_POST["vorname"], $_POST["nachname"],$_POST["username"], $_POST["pw"]);
                 }
                 ?>
-                <button type="submit">Login</button>
+                <button type="submit">Registrieren</button>
             </form>
             
         </section>

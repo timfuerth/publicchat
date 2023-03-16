@@ -53,7 +53,8 @@ header {
 
 #headerLogin{
     width: 50%;
-   
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
     background-color: #684969;
     padding: 10px 25px;
     height: 100%;
@@ -167,6 +168,8 @@ header a {
     background-color: lightblue;
     width: 50%;  
     margin: 0px auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .LoginForm input[type=text], input[type=password]
