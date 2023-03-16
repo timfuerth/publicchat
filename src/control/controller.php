@@ -1,24 +1,41 @@
 
 <script>
-    function contactClick(kontaktID) {
+    async function contactClick(kontaktID) {
         var contact = "";
         
         contact = document.getElementById("contactSelect"+kontaktID).getAttribute("value");  
         document.getElementById("spalter").style.visibility = "visible";
         document.getElementById("h1ToUser").innerHTML = contact;
+        document.getElementById(Chatverlauf).innerHTML = "";
         
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            console.log('Ready state:', this.readyState);
-            if (this.readyState == 4 && this.status == 200) {
-            console.log('Response:', this.responseText);
-            }
-        };
-        xhttp.open("POST", "control/save_contact.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("contact=" + contact);
+        while (true) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                // console.log('Ready state:', this.readyState);
+                if (this.readyState == 4 && this.status == 200) {
+                // console.log('Response:', this.responseText);
+                const newDiv = document.createElement("div");
+
+                // and give it some content
+                const newContent = document.createTextNode("Hi there and greetings!");
+
+                // add the text node to the newly created div
+                newDiv.appendChild(newContent);
+
+                // add the newly created element and its content into the DOM
+                document.getElementById("spalter").appendChild(newDiv);
+                }
+            };
+            xhttp.open("POST", "control/save_contact.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("contact=" + contact);
+            await Sleep(2000);
+        }
+        
     }
-    
+    function Sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
 </script>
 <?php
     
