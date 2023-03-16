@@ -41,25 +41,47 @@ header {
     padding: 0px 0px;
     
     overflow: hidden;
-    background-color: #f1f1f1;
     
 }
 #headerl{
     width: 30%;
     float: left;
     background-color: #684969;
-    padding: 10px 10px;
+    padding: 10px 25px;
     height: 100%;
 }
+
+#headerLogin{
+    width: 50%;
+   
+    background-color: #684969;
+    padding: 10px 25px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+#headerLogin button{
+    padding: 10px;
+    font-size: 1em;
+    height: 100%; 
+    cursor: pointer;
+    float: right;
+}
+
+#headerLogin h1{
+    float: left;
+    
+}
+
 #headerr{
     width: 100%;
     background-color: grey;
-    padding: 10px 10px;
+    padding: 10px 25px;
     height: 100%;
 }
 #headerr h1{
     float: left;
-    padding-left: 15px;
+    padding-left: 25px;
 }
 #headerr button{
     width: 9.69%;
@@ -80,7 +102,7 @@ header {
 header a {
     float: left;
     color: black;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 #wrapper{
@@ -109,7 +131,7 @@ header a {
     height: 93%;
     background-color:lightcyan;
     overflow: auto;
-    padding: 15px;
+    padding: 25px;
 }
 
 .NachrichtSenden input[type="text"]{
@@ -119,14 +141,13 @@ header a {
     height: 7%; 
 }
 .NachrichtSenden input[type="submit"]{
-    width: 9.69%;
+    width: 9.5%;
     font-size: 1em;
     height: 7%; 
     cursor: pointer;
 }
 
 .contact {
-    
     background-color: aqua;
     cursor: pointer;
     border-bottom-color: grey;
@@ -134,10 +155,59 @@ header a {
     border-bottom-style: solid;
     padding: 12px;
     height: 50px;
-    
-
 }
 
 .contact:hover{
     background-color: aquamarine;
+}
+
+.LoginForm {   
+    border: 3px solid #f1f1f1;   
+    padding: 25px;   
+    background-color: lightblue;
+    width: 50%;  
+    margin: 0px auto;
+}
+
+.LoginForm input[type=text], input[type=password]
+{
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid green;   
+    box-sizing: border-box; 
+}
+
+.LoginForm button[type=submit]{
+    background-color: #4CAF50;   
+    width: 100%;  
+    color: orange;   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: none;   
+    cursor: pointer;
+}
+
+.LoginForm button[type=submit]:hover{
+    opacity: 0.7;
+}
+
+.ButtonLogin{
+    background-color: #4CAF50;
+    font-size: 1em;
+    margin: 0px auto;
+    width: 50%;
+    
+}
+.ButtonLogin a{
+    margin-right: 30px;
+    padding: 10px;
+    margin-top: -50px;
+    color: white;
+    text-decoration: none;
+    float: right;
+    cursor: pointer;
+    display: block;
+    background-color: grey;
 }
