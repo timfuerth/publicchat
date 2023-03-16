@@ -82,6 +82,7 @@ header a {
     width: 30%;
     scrollbar-color: rgba(var(--white-rgb),.16)transparent;
     background-color: hotpink;
+    overflow: auto;
     float: left;
     height: 100%;
 }
@@ -98,11 +99,16 @@ header a {
 }
 
 .NachrichtSenden input[type="text"]{
-    width: 70%;
+    width: 60%;
     padding: 15px;
     font-size: 1em;
-    height: 7%;
-    
+    height: 7%; 
+}
+.NachrichtSenden input[type="submit"]{
+    width: 9.69%;
+    font-size: 1em;
+    height: 7%; 
+    cursor: pointer;
 }
 
 .contact {

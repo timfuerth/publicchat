@@ -96,7 +96,7 @@
         function register($vorname, $nachname, $user, $pw){
             if ($_SESSION['dbLeser']->RegisterRequest("freedb_publicchatdb", "benutzer", $vorname, $nachname, $user, $pw)){
                 $_SESSION['user'] = $user;
-                header("Refresh:0");
+                header("Refresh:0", "../index.php");
             }
             else {
                 $this->Alert("Registrierung fehlgeschlagen!");
