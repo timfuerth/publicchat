@@ -6,7 +6,7 @@
         contact = document.getElementById("contactSelect"+kontaktID).getAttribute("value");  
         document.getElementById("spalter").style.visibility = "visible";
         document.getElementById("h1ToUser").innerHTML = contact;
-        document.getElementById(Chatverlauf).innerHTML = "";
+        document.getElementById("Chatverlauf").innerHTML = "";
         
         while (true) {
             var xhttp = new XMLHttpRequest();
@@ -17,13 +17,13 @@
                 const newDiv = document.createElement("div");
 
                 // and give it some content
-                const newContent = document.createTextNode("Hi there and greetings!");
+                const newContent = document.createTextNode(this.responseText);
 
                 // add the text node to the newly created div
                 newDiv.appendChild(newContent);
 
                 // add the newly created element and its content into the DOM
-                document.getElementById("spalter").appendChild(newDiv);
+                document.getElementById("Chatverlauf").appendChild(newDiv);
                 }
             };
             xhttp.open("POST", "control/save_contact.php", true);
@@ -40,6 +40,7 @@
 <?php
     
     class Controller{
+        public $name = "test";
         function __construct(){
 
         }
@@ -82,8 +83,7 @@
             
         }
 
-        function kontakteErstellen()
-        {
+        function kontakteErstellen(){
             for ($i=0; $i < Count($_SESSION['kontakte']); $i++)
             { 
                 echo '<div id="contactSelect'.$i.'" class="contact" value="'.$_SESSION['kontakte'][$i]->Username.'" onclick="contactClick('.$i.')">';
@@ -99,7 +99,14 @@
                 $this->Alert($nachricht->Nachricht);
             }
         }
-
+        function msgEmpfangen(){
+            $return = $_SESSION['dbLeser']->NachrichtEmpfangen("freedb_publicchatdb", "nachrichten", "test", "test");
+            if ($return != false){
+                $nachricht = new Chatnachricht($_SESSION["user"], $_SESSION["toUser"], $return);
+                return $nachricht;
+            }
+            return false;
+        }
         function login($user, $pw){
             if ($_SESSION['dbLeser']->LoginRequest("freedb_publicchatdb", "benutzer", $user, $pw)){
                 $_SESSION['user'] = $user;

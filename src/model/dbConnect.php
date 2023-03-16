@@ -1,6 +1,6 @@
 <?php
     class DBConnect{
-
+        
         function __construct(){
 
         }
@@ -26,7 +26,20 @@
             $statement->execute(array($chatnachricht->vonBenutzer, $chatnachricht->anBenutzer,$chatnachricht->Nachricht));
             $pdo = null;
         }
+        function NachrichtenLesen($datenbank, $tabellenname, $user, $touser){
+            $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
 
+            $sql = "select * from ".$tabellenname;
+		    foreach($pdo->query($sql) as $zeile){
+                if (intval($zeile["NID"]) > intval($_SESSION["latmsg"])){
+                    $_SESSION["latmsg"] = intval($zeile["NID"]);
+                    $ausgabe = $zeile[1];
+                    $pdo = null;
+                    return $ausgabe;
+                }
+		    }
+            return false;
+        }
         function LoginRequest($datenbank, $tabellenname, $user, $pw){
             $pdo = new PDO('mysql:host=sql.freedb.tech;dbname='.$datenbank.'', 'freedb_burgi', 'jR53uP&&u4AGH7j');
             $allowed = false;
@@ -78,8 +91,5 @@
             }
             
         }
-
-
-
     }
 ?>
