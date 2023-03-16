@@ -7,7 +7,9 @@
             
         </div>
         <div id="spalter">
-            <section>Chat</section>
+            <div id="Chatverlauf">
+                <p>Chatnachricht</p>
+            </div>
             <form method="post" class="NachrichtSenden">
                 <input type="text" name="msgbox" id="msgbox" placeholder="Schreib eine Nachricht" />
                 <input type="submit" value="Senden">

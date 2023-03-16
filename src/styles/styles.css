@@ -57,6 +57,18 @@ header {
     padding: 10px 10px;
     height: 100%;
 }
+#headerr h1{
+    float: left;
+    padding-left: 15px;
+}
+#headerr button{
+    width: 9.69%;
+    font-size: 1em;
+    height: 100%; 
+    cursor: pointer;
+    float: right;
+}
+
 .logo {
     float: left;
     height: 40px;
@@ -93,9 +105,11 @@ header a {
     visibility: hidden;
 }
 
-#spalter section{
+#spalter #Chatverlauf{
     height: 93%;
     background-color:lightcyan;
+    overflow: auto;
+    padding: 15px;
 }
 
 .NachrichtSenden input[type="text"]{
