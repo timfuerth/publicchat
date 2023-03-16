@@ -3,19 +3,13 @@
     include "library/benutzer.php";
     include "library/chatnachricht.php";
     include "control/controller.php";
-
     
     session_start();
     
     if(!isset($_SESSION['controller'])){
         $_SESSION['controller'] = new Controller();
     }
-    if (isset($_SESSION['toUser'])){
-        $_SESSION['controller']->Alert($_SESSION['toUser']);
-    }
     $_SESSION['controller']->DBConnect_Erstellen();
-    
-    
 
     include_once "view/header.php";
     if (!isset($_SESSION['user'])){
