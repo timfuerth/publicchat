@@ -1,5 +1,22 @@
+<?php
+include "../model/dbConnect.php";
+include "../library/benutzer.php";
+include "../library/chatnachricht.php";
+include "../control/controller.php";
+session_start();
+if(!isset($_SESSION['controller'])){
+    $_SESSION['controller'] = new Controller();
+}
+
+$_SESSION['controller']->DBConnect_Erstellen();
+include_once "headerLogin.php";
+?>
 <html>
+<head>
+    <link rel="stylesheet" href="../styles/styles.css">
+    </head>
 <body>
+
     <div id="wrapper">
         <section>
             <form action="" method="post">
@@ -12,7 +29,7 @@
                 $_SESSION['controller']->login($_POST["username"], $_POST["pw"]);
             }
             ?>
-            <a href="view/register.php">Registrieren</a>
+            <a href="register.php">Registrieren</a>
         </section>
     </div>
 </body>

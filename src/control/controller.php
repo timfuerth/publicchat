@@ -103,7 +103,7 @@
         function login($user, $pw){
             if ($_SESSION['dbLeser']->LoginRequest("freedb_publicchatdb", "benutzer", $user, $pw)){
                 $_SESSION['user'] = $user;
-                header("Refresh:0");
+                header('location: ../index.php');
             }
             else {
                 $this->Alert("Passwort oder Benutzername falsch!");
@@ -113,7 +113,7 @@
         function register($vorname, $nachname, $user, $pw){
             if ($_SESSION['dbLeser']->RegisterRequest("freedb_publicchatdb", "benutzer", $vorname, $nachname, $user, $pw)){
                 $_SESSION['user'] = $user;
-                header("Refresh:0", "../index.php");
+                header('location: ../index.php');
             }
             else {
                 $this->Alert("Registrierung fehlgeschlagen!");

@@ -51,6 +51,29 @@ header {
     padding: 10px 10px;
     height: 100%;
 }
+
+#headerLogin{
+    width: 50%;
+    float: left;
+    background-color: #684969;
+    padding: 10px 10px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+#headerLogin button{
+    width: 15%;
+    font-size: 1em;
+    height: 100%; 
+    cursor: pointer;
+    float: right;
+}
+
+#headerLogin h1{
+    float: left;
+    padding-left: 15px;
+}
+
 #headerr{
     width: 100%;
     background-color: grey;
@@ -119,7 +142,7 @@ header a {
     height: 7%; 
 }
 .NachrichtSenden input[type="submit"]{
-    width: 9.69%;
+    width: 9.5%;
     font-size: 1em;
     height: 7%; 
     cursor: pointer;

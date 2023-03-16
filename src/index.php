@@ -13,7 +13,8 @@
 
     include_once "view/header.php";
     if (!isset($_SESSION['user'])){
-        require "view/login.php";
+        header('location: view/login.php');
+        
     }
     else{
         $_SESSION['touser'] = "";
