@@ -84,12 +84,19 @@
         }
 
         function kontakteErstellen(){
-            for ($i=0; $i < Count($_SESSION['kontakte']); $i++)
-            { 
-                echo '<div id="contactSelect'.$i.'" class="contact" value="'.$_SESSION['kontakte'][$i]->Username.'" onclick="contactClick('.$i.')">';
-                $this->Ueberschrift(2,$_SESSION['kontakte'][$i]->Username);
-                echo '</div>';
+            if(isset($_SESSION['kontakte'])){
+                for ($i=0; $i < Count($_SESSION['kontakte']); $i++)
+                { 
+                    echo '<div id="contactSelect'.$i.'" class="contact" value="'.$_SESSION['kontakte'][$i]->Username.'" onclick="contactClick('.$i.')">';
+                    $this->Ueberschrift(2,$_SESSION['kontakte'][$i]->Username);
+                    echo '</div>';
+                }
             }
+            else{
+                $this->Alert("Noch kein Kontakt vorhanden");
+            }
+            
+            
 
         }
         function msgSenden($msg){
