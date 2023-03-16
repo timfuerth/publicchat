@@ -18,8 +18,12 @@ include_once "headerLogin.php";
 <body>
 
     <div id="wrapper">
+        <div class="ButtonLogin">
+            <a href="register.php">zur Registrierung</a>
+        </div>
+    
         <section>
-            <form action="" method="post">
+            <form action="" method="post" class="LoginForm">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="pw" placeholder="Passwort">
                 <button type="submit">Login</button>
@@ -29,7 +33,8 @@ include_once "headerLogin.php";
                 $_SESSION['controller']->login($_POST["username"], $_POST["pw"]);
             }
             ?>
-            <a href="register.php">Registrieren</a>
+            
+            
         </section>
     </div>
 </body>

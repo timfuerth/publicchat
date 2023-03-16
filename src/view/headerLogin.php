@@ -25,10 +25,10 @@
 		
 			echo '<h1>PublicChat</h1>';
 	    ?>
-        <button onclick="">abmelden</button>
+        
 		</div>
 
-        <div id="headerr" style="background-color: none">
+        <div id="headerr" style="display: none;">
 
         </div>
 		

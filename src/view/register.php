@@ -17,20 +17,23 @@ include_once "headerLogin.php";
     </head>
 <body>
     <div id="wrapper">
+        <div class="ButtonLogin">
+            <a href="login.php">zum Login</a>
+        </div>
         <section>
-            <form action="" method="post">
+            <form action="" method="post" class="LoginForm">
                 <input type="text" name="vorname" placeholder="Vorname">
                 <input type="text" name="nachname" placeholder="Nachname">
                 <input type="text" name="username" placeholder="Username">
-                <input type="text" name="pw" placeholder="Passwort">
+                <input type="password" name="pw" placeholder="Passwort">
+                <?php 
+                if (isset($_POST["username"])){
+                    $_SESSION['controller']->register($_POST["vorname"], $_POST["nachname"],$_POST["username"], $_POST["pw"]);
+                }
+                ?>
                 <button type="submit">Login</button>
             </form>
-            <?php 
-            if (isset($_POST["username"])){
-                $_SESSION['controller']->register($_POST["vorname"], $_POST["nachname"],$_POST["username"], $_POST["pw"]);
-            }
-            ?>
-            <a href="../index.php">Zurück zum Login</a>
+            
         </section>
     </div>
 </body>
