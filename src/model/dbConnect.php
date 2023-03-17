@@ -1,8 +1,8 @@
 <?php
     class DBConnect{
-        private $DBPWD = "3CEhGbUTezWUYuFX";
-        private $Host = "mysql:host=localhost";
-        private $user = "timfuerth_user";
+        private $DBPWD = "5PJt8Ay!&KHv?DX";
+        private $Host = "mysql:host=sql.freedb.tech";
+        private $user = "freedb_burgi";
         function __construct(){
 
         }

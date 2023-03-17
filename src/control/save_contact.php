@@ -14,7 +14,7 @@ if (isset($_POST['contact'])) {
 }
 function msgEmpfangen(){
   $nachrichtenListe = array();
-  $return = $_SESSION['dbLeser']->NachrichtenLesen("timfuerth_dbschule", "nachrichten", "test", "test");
+  $return = $_SESSION['dbLeser']->NachrichtenLesen("freedb_publicchatdb", "nachrichten", "test", "test");
   if ($return != false){
     foreach ($return as $message) {
       $nachricht = new Chatnachricht($_SESSION["user"], $_SESSION["toUser"], $message);

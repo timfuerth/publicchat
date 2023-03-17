@@ -57,7 +57,7 @@
         function DBConnect_Erstellen(){
             if(!isset($_SESSION['dbLeser'])){
                 $_SESSION['dbLeser'] = new DBConnect();
-                $_SESSION['dbLeser']->VerbindungAufbauen("timfuerth_dbschule", "benutzer");
+                $_SESSION['dbLeser']->VerbindungAufbauen("freedb_publicchatdb", "benutzer");
             }
             
         }
@@ -112,7 +112,7 @@
             }
         }
         function msgEmpfangen(){
-            $return = $_SESSION['dbLeser']->NachrichtEmpfangen("timfuerth_dbschule", "nachrichten", "test", "test");
+            $return = $_SESSION['dbLeser']->NachrichtEmpfangen("freedb_publicchatdb", "nachrichten", "test", "test");
             if ($return != false){
                 $nachricht = new Chatnachricht($_SESSION["user"], $_SESSION["toUser"], $return);
                 return $nachricht;
