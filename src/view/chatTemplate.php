@@ -1,5 +1,5 @@
 <html>
-<body >
+<body style="background-image: url('view/images/background.png');">
     <div id="wrapper">
         <div id="spaltel">
             
@@ -7,7 +7,7 @@
             
         </div>
         <div id="spalter">
-            <div id="Chatverlauf">
+            <div id="Chatverlauf" style=" ">
                 <p>Chatnachricht</p>
             </div>
             <form method="post" class="NachrichtSenden">

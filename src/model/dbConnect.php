@@ -95,10 +95,23 @@
                 }
                 return false;
             } else {
+            //Speichern des Passwort-Hashes:
+            // $connection = pg_pconnect("host=sheep port=5432 dbname=mary user=lamb password=foo");
+            // if (!$conn) {
+            //     echo "An error occurred.\n";
+            //     exit;
+            // }
+            // $query  = sprintf("INSERT INTO ".$tabellenname."(Vorname,Nachname, Username, Passwort) VALUES(".$vorname.",".$nachname.",".$user.",".$pw.");",
+            // pg_escape_string($username),
+            // password_hash($password, PASSWORD_DEFAULT));
+            // $result = pg_query($connection, $query);
+            // return true;
+            //Ohne Verschlüsselung:
                 $statement = $pdo->prepare("Insert into ".$tabellenname."(Vorname, Nachname, Username, Passwort) values(?, ?, ?, ?)");
-                        $statement->execute(array($vorname, $nachname, $user, $pw));
-                        $pdo = null;
-                        return true;
+                $statement->execute(array($vorname, $nachname, $user, $pw));
+                $pdo = null;
+                return true;
+            
             }
             
         }

@@ -27,7 +27,7 @@
 		<a href="index.php"><img src="view/images/logo.png" class="logo" alt=""></a>
 		<?php 
 			if (isset($_SESSION['user'])){
-				echo '<h1>Hallo '.$_SESSION['user'].'</h1>';
+				echo '<h1>PublicChat - '.$_SESSION['user'].'</h1>';
 			}
 			else{
 				echo '<h1>Hallo</h1>';
@@ -36,7 +36,7 @@
 		</div>
 		<div id="headerr">
 			<h1 id="h1ToUser"></h1>
-			<button onclick="">abmelden</button>
+			<button><a href="view/login.php">abmelden</a></button>
 		</div>
 			
 	</header>

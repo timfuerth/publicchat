@@ -3,12 +3,15 @@ include "../model/dbConnect.php";
 include "../library/benutzer.php";
 include "../library/chatnachricht.php";
 include "../control/controller.php";
+
 session_start();
 if(!isset($_SESSION['controller'])){
     $_SESSION['controller'] = new Controller();
 }
-
+$_SESSION['user'] = null;
+$_SESSION['toUser'] = "";
 $_SESSION['controller']->DBConnect_Erstellen();
+
 include_once "headerLogin.php";
 ?>
 <html>

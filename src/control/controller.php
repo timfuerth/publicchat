@@ -120,7 +120,9 @@
             return false;
         }
         function login($user, $pw){
-            if ($_SESSION['dbLeser']->LoginRequest("timfuerth_dbschule", "benutzer", $user, $pw)){
+            
+
+            if ($_SESSION['dbLeser']->LoginRequest("freedb_publicchatdb", "benutzer", $user, $pw)){
                 $_SESSION['user'] = $user;
                 header('location: ../index.php');
             }
@@ -128,9 +130,11 @@
                 $this->Alert("Passwort oder Benutzername falsch!");
             }
         }
-
+        
         function register($vorname, $nachname, $user, $pw){
-            if ($_SESSION['dbLeser']->RegisterRequest("timfuerth_dbschule", "benutzer", $vorname, $nachname, $user, $pw)){
+            
+
+            if ($_SESSION['dbLeser']->RegisterRequest("freedb_publicchatdb", "benutzer", $vorname, $nachname, $user, $pw)){
                 $_SESSION['user'] = $user;
                 header('location: ../index.php');
             }
