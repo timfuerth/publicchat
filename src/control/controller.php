@@ -16,11 +16,15 @@
                 // console.log('Response:', this.responseText);
                 const newDiv = document.createElement("div");
 
-                // and give it some content
-                const newContent = document.createTextNode(this.responseText);
+                
 
-                // add the text node to the newly created div
-                newDiv.appendChild(newContent);
+                
+                const aktuelleNachrichten = this.responseText.split("<br>");
+                aktuelleNachrichten.forEach(element => {
+                    const newContent = document.createTextNode(this.responseText);
+                    newDiv.appendChild(newContent);
+                });
+                
 
                 // add the newly created element and its content into the DOM
                 document.getElementById("Chatverlauf").appendChild(newDiv);
@@ -29,6 +33,7 @@
             xhttp.open("POST", "control/save_contact.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("contact=" + contact);
+            
             await Sleep(2000);
         }
         
@@ -52,7 +57,7 @@
         function DBConnect_Erstellen(){
             if(!isset($_SESSION['dbLeser'])){
                 $_SESSION['dbLeser'] = new DBConnect();
-                $_SESSION['dbLeser']->VerbindungAufbauen("freedb_publicchatdb", "benutzer");
+                $_SESSION['dbLeser']->VerbindungAufbauen("timfuerth_dbschule", "benutzer");
             }
             
         }
@@ -102,12 +107,12 @@
         function msgSenden($msg){
             if (isset($_POST["msgbox"])){
                 $nachricht = new Chatnachricht($_SESSION["user"], $_SESSION["toUser"], $msg);
-                $_SESSION['dbLeser']->NachrichtSenden("freedb_publicchatdb", "nachrichten", $nachricht);
+                $_SESSION['dbLeser']->NachrichtSenden("timfuerth_dbschule", "nachrichten", $nachricht);
                 $this->Alert($nachricht->Nachricht);
             }
         }
         function msgEmpfangen(){
-            $return = $_SESSION['dbLeser']->NachrichtEmpfangen("freedb_publicchatdb", "nachrichten", "test", "test");
+            $return = $_SESSION['dbLeser']->NachrichtEmpfangen("timfuerth_dbschule", "nachrichten", "test", "test");
             if ($return != false){
                 $nachricht = new Chatnachricht($_SESSION["user"], $_SESSION["toUser"], $return);
                 return $nachricht;
@@ -115,7 +120,7 @@
             return false;
         }
         function login($user, $pw){
-            if ($_SESSION['dbLeser']->LoginRequest("freedb_publicchatdb", "benutzer", $user, $pw)){
+            if ($_SESSION['dbLeser']->LoginRequest("timfuerth_dbschule", "benutzer", $user, $pw)){
                 $_SESSION['user'] = $user;
                 header('location: ../index.php');
             }
@@ -125,7 +130,7 @@
         }
 
         function register($vorname, $nachname, $user, $pw){
-            if ($_SESSION['dbLeser']->RegisterRequest("freedb_publicchatdb", "benutzer", $vorname, $nachname, $user, $pw)){
+            if ($_SESSION['dbLeser']->RegisterRequest("timfuerth_dbschule", "benutzer", $vorname, $nachname, $user, $pw)){
                 $_SESSION['user'] = $user;
                 header('location: ../index.php');
             }
